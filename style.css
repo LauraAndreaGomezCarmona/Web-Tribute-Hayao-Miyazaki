@@ -1,0 +1,512 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+}
+/*Barra de navegación*/
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-items: center;
+    background-color: rgb(33, 157, 226);
+}
+.menuItems{
+    align-items: center;
+    list-style: none;
+    padding-top: 4px;
+}
+.items{
+    display: inline-block;
+    margin-right: 30px;
+    margin-left: 50px;
+}
+.hamburguesa{
+    width: 75px;
+    height: 75px;
+    cursor: pointer;
+    visibility: hidden;
+}
+nav a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+nav a:hover{
+    color: black;
+    border-bottom: 6px solid black;
+    border-radius: 5px;
+}
+.logo{
+    width: 250px;
+    height: 130px;
+}
+ul.show{
+    top: 140px;
+}
+@media (max-width: 1180px){
+    nav a{
+        font-size: 20px;
+    }
+    nav{
+        height: 150px;
+        background-color: rgb(33, 157, 226);
+    }
+    .items{
+        padding: 6px;
+        margin: 5px 50px 0 50px;
+        color: black;
+    }
+    .hamburguesa{
+        visibility: visible;
+    }
+    .menuItems{
+        position: fixed;
+        top: 120px;
+        text-align: center;
+        padding: 14px;
+        transition: all .4s;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        background-color: rgb(33, 157, 226);
+        overflow: hidden;
+    }
+    .logo{
+        width: 200px;
+        height: 100px;
+    }
+}
+
+/*Slider*/
+.slider{
+    margin: 0;
+    padding: 0;
+    max-width: 2000px;
+    height: 500px;
+    width: 100%;
+    overflow: hidden;
+}
+.slides img{
+    width: 100vw;
+    height: 600px;
+}
+.slides{
+    display: flex;
+    transform: translate3d(0,0,0);
+    transition: all 600ms;
+    animation-name: autoplay;
+    animation-duration: 40s;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+.images{
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+.mini-imagenes{
+    bottom: 20px;
+    position: absolute;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.mini-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 4px solid white;
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    background: rgba(255,255,255,0.5);
+    margin: 30px 14px;
+    transition: all 200ms;
+}
+.mini-item:hover{
+    transform: scale(2);
+}
+.mini-item img{
+    display: inline-block;
+    max-width: 50px;
+    height: 100%;
+
+    transform: scale(1);
+    opacity: 0;
+    transition: all 400ms;
+}
+.mini-item:hover img{
+    opacity: 1;
+    transform: scale(1);
+}
+input[id="1"]:checked ~ .slides{
+    animation:none;
+    transform:translate3d(0,0,0);
+}
+input[id="1"]:checked ~ .mini-imagenes .mini-item[for="1"]{
+    background:#fff;
+}
+input[id="2"]:checked ~ .slides{
+    animation:none;
+    transform:translate3d(calc(-100% * 1),0,0);
+}
+input[id="2"]:checked ~ .mini-imagenes .mini-item[for="2"]{
+    background:#fff;
+}
+input[id="3"]:checked ~ .slides{
+    animation:none;
+    transform:translate3d(calc(-100% * 2),0,0);
+}
+input[id="3"]:checked ~ .mini-imagenes .mini-item[for="3"]{
+    background:#fff;
+}
+input[id="4"]:checked ~ .slides{
+    animation:none;
+    transform:translate3d(calc(-100% * 3),0,0);
+}
+input[id="4"]:checked ~ .mini-imagenes .mini-item[for="4"]{
+    background:#fff;
+}
+input[id="5"]:checked ~ .slides{
+    animation:none;
+    transform:translate3d(calc(-100% * 4),0,0);
+}
+input[id="5"]:checked ~ .mini-imagenes .mini-item[for="5"]{
+    background:#fff;
+}
+input[id="6"]:checked ~ .slides{
+    animation:none;
+    transform:translate3d(calc(-100% * 5),0,0);
+}
+input[id="6"]:checked ~ .mini-imagenes .mini-item[for="6"]{
+    background:#fff;
+}
+@keyframes autoplay{
+    16.67%{
+        transform: translate3d(calc(-100% * 0),0,0);
+    }
+    33.34%{
+        transform: translate3d(calc(-100% * 1),0,0);
+    }
+    50.01%{
+        transform: translate3d(calc(-100% * 2),0,0);
+    }
+    66.68%{
+        transform: translate3d(calc(-100% * 3),0,0);
+    }
+    83.35%{
+        transform: translate3d(calc(-100% * 4),0,0);
+    }
+    100%{
+        transform: translate3d(calc(-100% * 5),0,0);
+    }
+}
+@media (max-width: 1180px){
+    .container{
+        background-color: rgb(33, 157, 226);
+    }
+    .slider{
+        margin: 180px 0 0 0;
+        padding: 0;
+        max-width: 1180px;
+        height: 220px;
+        width: 100%;
+    }
+    .slides img{
+        width: 100vw;
+        height: 220px;
+    }
+    .mini-item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 2px solid white;
+        width: 16px;
+        height: 16px;
+        border-radius: 2px;
+        margin: 4px 14px;
+        cursor: pointer;
+        background: rgba(255,255,255,0.5);
+        transition: all 200ms;
+        overflow: hidden;
+    }
+    .mini-imagenes{
+        top: 330px;
+        position: absolute;
+        left: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        overflow: hidden;
+    }
+}
+/*Acerca de*/
+h1{
+    font-size: 70px;
+    text-transform: uppercase;
+    text-align:left;
+    margin: 40px 40px 10px 100px;
+}
+.title{
+    font-size: 60px;
+    border-left: 16px solid #219DE2;
+    text-transform: uppercase;
+    padding-left: 16px;
+    margin-left: 80px;
+}
+.decoración-arriba, .decoración-abajo{
+    width: 100%;
+    height: 280px;
+}
+.descripcion{
+    display: flex;
+    font-size: 26px;
+    line-height: 40px;
+    width: 100%;
+}
+.biografia{
+    margin: 60px 40px 0 80px;
+}
+.biografia a{
+    text-decoration: none;
+}
+.Hayao{
+    width: 800px;
+    height: 700px;
+}
+@media (max-width: 1180px){
+    h1{
+        font-size: 34px;
+        margin-left: 30px;
+    }
+    .title{
+        font-size: 30px;
+        border-left: 8px solid #219DE2;
+        text-transform: uppercase;
+        padding-left: 6px;
+        margin-left: 30px;
+    }
+    .decoración-arriba, .decoración-abajo{
+        width: 100%;
+        height: 100px;
+    }
+    .descripcion{
+        display: block;
+        font-size: 18px;
+        line-height: 24px;
+        width: 100%;
+    }
+    .biografia{
+        margin: 40px 10px 0 30px;
+    }
+    .Hayao{
+        width: 300px;
+        height: 400px;
+        margin-left: 50px;
+    }
+}
+/*Galeria*/
+h3{
+    font-size: 60px;
+    margin: 20px 0 20px 80px;
+    text-transform: uppercase;
+}
+.galeria img{
+    width: 400px;
+    height: 300px;
+}
+.galeria{
+    display: grid;
+    grid-template: repeat(2,340px) / repeat(3, 440px);
+    margin-left: 30px;
+    margin-bottom: 60px;
+}
+@media (max-width: 1180px){
+    h3{
+        font-size: 28px;
+        margin: 20px 10px 20px 80px;
+        text-transform: uppercase;
+    }
+    .galeria img{
+        width: 300px;
+        height: 200px;
+        margin: 10px 0 10px 0;
+    }
+    .galeria{
+        display: block;
+        margin:10px 10px 40px 60px;
+    }
+}
+/*Studio Ghibli*/
+.que-es{
+    display: flex;
+    background-color: rgb(109, 108, 108);
+    border-radius: 20px;
+    margin: 40px 0 200px 0;
+    font-size: 26px;
+}
+.que-es img{
+    width: 520px;
+    height: 450px;
+    margin: 10px 30px 80px 10px;
+}
+.que-es p{
+    margin: 60px 60px 0 60px;
+    color: white;
+}
+.white{
+    color: white;
+    font-size: 34px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+}
+@media (max-width: 1180px){
+    .que-es{
+        display: block;
+        background-color: rgb(109, 108, 108);
+        border-radius: 20px;
+        margin: 30px 0 50px 0;
+        font-size: 18px;
+        padding: 20px;
+    }
+    .que-es img{
+        width: 320px;
+        height: 250px;
+        margin: 10px 20px 10px 50px;
+    }
+    .que-es p{
+        margin: 20px 60px 20px 60px;
+        color: white;
+    }
+    .white{
+        color: white;
+        font-size: 24px;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+    }
+}
+.margenes-peliculas{
+    width: 100%;
+    height: 180px;
+    margin-bottom: 8px;
+}
+.pelicula-titulo{
+    font-size: 42px;
+    margin: 20px 0 40px 80px;
+}
+.resumen-pelicula{
+    font-size: 26px;
+    margin: 40px 160px 40px 80px;
+}
+.totoro{
+    width: 900px;
+    height: 500px;
+    margin-left: 200px;
+}
+.location{
+    display: flex;
+}
+.kiki{
+    width: 500px;
+    height: 500px;
+    margin-right: 60px;
+}
+@media (max-width: 1180px){
+    .margenes-peliculas{
+        width: 100%;
+        height: 90px;
+    }
+    .pelicula-titulo{
+        font-size: 26px;
+        margin: 20px 0 40px 80px;
+    }
+    .resumen-pelicula{
+        font-size: 18px;
+        margin: 20px 26px 40px 30px;
+    }
+    .totoro{
+        width: 350px;
+        height: 300px;
+        margin-left: 20px;
+    }
+    .kiki{
+        width: 300px;
+        height: 300px;
+        margin: 0 50px 10px 60px;
+    }
+    .location{
+        display: block;
+    }
+}
+/*frases*/
+.frase{
+    font-size: 26px;
+    margin: 0 230px 40px 200px;
+    background-color: #aab6f3;
+    border-radius: 20px;
+    padding: 30px;
+}
+.frase1{
+    margin-top: 60px;
+}
+.frase5{
+    margin-bottom: 60px;
+}
+@media (max-width: 1180px){
+    .frase{
+        font-size: 20px;
+        margin: 0 30px 30px 30px;
+        background-color: #aab6f3;
+        border-radius: 20px;
+        padding: 30px;
+    }
+    .frase1{
+        margin-top: 50px;
+    }
+    .frase5{
+        margin-bottom: 50px;
+    }
+}
+/*Footer*/
+footer{
+    background-color: #219DE2;
+    color: white;
+    width: 100%;
+    height: 90px;
+    font-size: 30px;
+}
+footer p{
+    margin: 20px 400px 20px 450px;
+    padding-top: 30px;
+    font-weight: bold;
+}
+@media (max-width: 1180px){
+    footer{
+        background-color: #219DE2;
+        color: white;
+        width: 100%;
+        height: 64px;
+        font-size: 20px;
+    }
+    footer p{
+        margin: 10px 40px 10px 40px;
+        padding-top: 20px;
+        font-weight: bold;
+    }
+}
