@@ -10,8 +10,9 @@ nav{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    align-items: center;
     background-color: rgb(33, 157, 226);
+    width: 100%;
+    height: 130px;
 }
 .menuItems{
     align-items: center;
@@ -20,21 +21,27 @@ nav{
 }
 .items{
     display: inline-block;
-    margin-right: 30px;
-    margin-left: 50px;
+    margin-right: 40px;
+    margin-left: 40px;
 }
 .hamburguesa{
     width: 75px;
     height: 75px;
     cursor: pointer;
-    visibility: hidden;
+    display: none;
+}
+.CloseMenu{
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    display: none;
 }
 nav a{
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
     color: white;
-    font-size: 24px;
+    font-size: 25px;
     cursor: pointer;
 }
 nav a:hover{
@@ -46,40 +53,48 @@ nav a:hover{
     width: 250px;
     height: 130px;
 }
-ul.show{
-    top: 140px;
-}
 @media (max-width: 1180px){
-    nav a{
-        font-size: 20px;
-    }
     nav{
-        height: 150px;
-        background-color: rgb(33, 157, 226);
+        display: block;
+        height: 160px;
     }
-    .items{
-        padding: 6px;
-        margin: 5px 50px 0 50px;
-        color: black;
+    nav a{
+        font-size: 24px;
+        padding: 4px;
+        line-height: 30px;
+        padding-bottom: 0;
     }
     .hamburguesa{
-        visibility: visible;
+        display: block;
+        position: absolute;
+        top: 50px;
+        right: 24px;
+    }
+    .CloseMenu{
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 20px;
     }
     .menuItems{
-        position: fixed;
-        top: 120px;
-        text-align: center;
-        padding: 14px;
-        transition: all .4s;
         flex-direction: column;
-        justify-content: center;
-        text-align: center;
+        justify-content: space-around;
+        align-items: center;
+        position: fixed;
+        z-index: 10;
+        height: 240px;
         background-color: rgb(33, 157, 226);
-        overflow: hidden;
+        width: 100vw;
+        transition: top 1s ease;
+        display: none;
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
     .logo{
-        width: 200px;
-        height: 100px;
+        height: 140px;
+        width: 250px;
+        margin-left: 20px;
+        margin-top: 10px;
     }
 }
 
@@ -132,7 +147,7 @@ ul.show{
     overflow: hidden;
     cursor: pointer;
     background: rgba(255,255,255,0.5);
-    margin: 30px 14px;
+    margin: 30px 16px;
     transition: all 200ms;
 }
 .mini-item:hover{
@@ -214,25 +229,22 @@ input[id="6"]:checked ~ .mini-imagenes .mini-item[for="6"]{
     }
 }
 @media (max-width: 1180px){
-    .container{
-        background-color: rgb(33, 157, 226);
-    }
     .slider{
-        margin: 180px 0 0 0;
+        margin: 0;
         padding: 0;
         max-width: 1180px;
-        height: 220px;
+        height: 280px;
         width: 100%;
     }
     .slides img{
         width: 100vw;
-        height: 220px;
+        height: 280px;
     }
     .mini-item{
         display: flex;
         flex-direction: column;
         align-items: center;
-        border: 2px solid white;
+        border: 3px solid white;
         width: 16px;
         height: 16px;
         border-radius: 2px;
@@ -241,9 +253,10 @@ input[id="6"]:checked ~ .mini-imagenes .mini-item[for="6"]{
         background: rgba(255,255,255,0.5);
         transition: all 200ms;
         overflow: hidden;
+        border-radius: 5px solid black;
     }
     .mini-imagenes{
-        top: 330px;
+        top: 96px;
         position: absolute;
         left: 10px;
         display: flex;
@@ -362,7 +375,7 @@ h3{
 .que-es img{
     width: 520px;
     height: 450px;
-    margin: 10px 30px 80px 10px;
+    margin: 10px 30px 80px 30px;
 }
 .que-es p{
     margin: 60px 60px 0 60px;
@@ -387,10 +400,10 @@ h3{
     .que-es img{
         width: 320px;
         height: 250px;
-        margin: 10px 20px 10px 50px;
+        margin: 10px 30px 10px 20px;
     }
     .que-es p{
-        margin: 20px 60px 20px 60px;
+        margin: 20px 10px 20px 40px;
         color: white;
     }
     .white{
