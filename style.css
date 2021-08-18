@@ -127,7 +127,7 @@ nav a:hover{
     max-width: 100%;
 }
 .mini-imagenes{
-    bottom: 20px;
+    bottom: 24px;
     position: absolute;
     left: 0;
     display: flex;
@@ -256,7 +256,7 @@ input[id="6"]:checked ~ .mini-imagenes .mini-item[for="6"]{
         border-radius: 5px solid black;
     }
     .mini-imagenes{
-        top: 96px;
+        top: 90px;
         position: absolute;
         left: 10px;
         display: flex;
